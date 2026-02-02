@@ -1,7 +1,7 @@
-export const BASE_URL = 'http://127.0.0.1';
+export const BASE_URL = 'http://10.0.0.2';
 
-const BASE_URL_S = 'http://127.0.0.1:7100'; // server
-const BASE_URL_H = 'http://127.0.0.1:7100';
+const BASE_URL_S = 'http://10.0.0.2:7100'; // server
+const BASE_URL_H = 'http://10.0.0.2:7100';
 
 export const API = {
   LOGIN: `${BASE_URL_S}/users/user/login`,
