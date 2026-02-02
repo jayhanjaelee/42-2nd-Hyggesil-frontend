@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { BASE_URL_S, BASE_URL_H } from '../../../config';
 
 const HostSetHotelInfo = ({ hotelInfo }) => {
   const {
@@ -25,7 +26,8 @@ const HostSetHotelInfo = ({ hotelInfo }) => {
     formData.append('images', images); // 데이터 추가
 
     try {
-      const response = await fetch('http://hyggesil.com:4000/hosts', {
+      // const response = await fetch('http://hyggesil.com:4000/hosts', {
+      const response = await fetch(`${BASE_URL_S}/4000/hosts`, {
         method: 'POST',
         body: formData,
       });

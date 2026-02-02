@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import GlobalStyle from '../../../styles/GlobalStyle';
 import KakaoModal from './KakaoModal';
 import * as S from './User.styled';
+import { BASE_URL_S } from '../../../config';
 
 const User = ({ content: { title, text, url, text2 } }) => {
   const navigate = useNavigate();
@@ -58,7 +59,7 @@ const User = ({ content: { title, text, url, text2 } }) => {
     e.preventDefault();
     // 로그인 API 호출
     if (isLogin) {
-      fetch('http://hyggesil.com/users/login', {
+      fetch(`${BASE_URL_S}/users/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json;charset=utf-8',

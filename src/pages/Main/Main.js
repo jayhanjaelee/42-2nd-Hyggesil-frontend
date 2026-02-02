@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import KakaoMap from '../../components/KakaoMap/KakaoMap';
 import HotelList from './components/HotelList';
+import { BASE_URL_S } from '../../config';
 
 const Main = () => {
   const [isMapView, setIsMapView] = useState(false);
   const [hotels, setHotels] = useState({});
   useEffect(() => {
-    fetch(`http://hyggesil.com/hotels`)
+    fetch(`${BASE_URL_S}/hotels`)
       .then(response => response.json())
       .then(({ hotels }) => {
         setHotels(hotels);

@@ -6,6 +6,7 @@ import { MdArrowBackIos } from 'react-icons/md';
 import * as SC from '../../styles/Container.styled';
 import * as SB from '../../styles/Button.styled';
 import * as ST from '../../styles/Content.styled';
+import { BASE_URL_S } from '../../config';
 
 const Payment = () => {
   const location = useLocation();
@@ -25,7 +26,7 @@ const Payment = () => {
 
   const BookingHandler = () => {
     const token = localStorage.getItem('token');
-    fetch('http://hyggesil.com/reservations/payment', {
+    fetch(`${BASE_URL_S}/reservations/payment`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',

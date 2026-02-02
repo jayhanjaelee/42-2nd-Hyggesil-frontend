@@ -12,6 +12,7 @@ import { kakaoShare } from './Share/KakaoShare';
 import * as SC from '../../styles/Container.styled';
 import * as ST from '../../styles/Content.styled';
 import KakaoMap from '../../components/KakaoMap/KakaoMap';
+import { BASE_URL_S } from '../../config';
 
 const Detail = () => {
   const params = useParams();
@@ -62,7 +63,7 @@ const Detail = () => {
   ];
 
   useEffect(() => {
-    fetch(`http://hyggesil.com/hotels/${params.id}`)
+    fetch(`${BASE_URL_S}/hotels/${params.id}`)
       .then(res => res.json())
       .then(data => {
         setDetailData(data.hotel);

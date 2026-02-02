@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 // const restApiKey = process.env.REST_API_KEY;
 // const redirectUri = process.env.REDIRECT_URI;
+import { BASE_URL_S, BASE_URL_H } from '../../../config';
 
 const KakaoLogin = () => {
   const navigate = useNavigate();
@@ -14,7 +15,7 @@ const KakaoLogin = () => {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: `grant_type=authorization_code&client_id=3763920e36dc605d6cc82158161734ec&redirect_uri=http://localhost:3000/kakaoologin&code=${AUTHORIZE_CODE}`,
     })
-      .then(res => res.json())∑
+      .then(res => res.json())
       .then(data => {
         if (data.access_token) {
           console.log(1);
@@ -26,7 +27,7 @@ const KakaoLogin = () => {
   };
 
   const postToken = token => {
-    fetch(`http://hyggesil.com/users/login/kakao`, {
+    fetch(`${BASE_URL_S}/users/login/kakao`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',

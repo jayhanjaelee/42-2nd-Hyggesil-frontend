@@ -5,6 +5,7 @@ import * as S from './HotelList.styled';
 import { HiOutlineAdjustmentsHorizontal } from 'react-icons/hi2';
 import { useLocation, useSearchParams } from 'react-router-dom';
 import RecentlyView from './RecentlyViewd';
+import { BASE_URL_H, BASE_URL_S } from '../../../config';
 
 const HotelList = () => {
   const [hotels, setHotels] = useState([]);
@@ -25,7 +26,7 @@ const HotelList = () => {
   const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
-    fetch(`http://hyggesil.com/hotels${location.search}`)
+    fetch(`${BASE_URL_S}/hotels${location.search}`)
       .then(response => response.json())
       .then(({ hotels }) => {
         setHotels(hotels);
